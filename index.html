@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Things I want to do</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    
+</head>
+<body>
+
+    <div class="container">
+        <h2>✍️ Things I want to do before I die:</h2>
+
+        <div class="input-group">
+            <input type="text" id="itemInput" placeholder="Enter a task..." />
+            <button id="addBtn">Add</button>
+        </div>
+
+        <ul id="itemList"></ul>
+    </div>
+
+    <script>
+        const input = document.getElementById("itemInput");
+        const button = document.getElementById("addBtn");
+        const list = document.getElementById("itemList");
+
+        button.addEventListener("click", function () {
+
+            if (input.value.trim() === "") {
+                alert("Please enter a task!");
+                return;
+            }
+
+        
+            const li = document.createElement("li");
+
+       
+            li.textContent = input.value;
+
+          
+            list.appendChild(li);
+
+           
+            input.value = "";
+        });
+    </script>
+
+</body>
+</html>
